@@ -63,6 +63,7 @@ img{max-width:100%}
 .trust .marq{display:flex;gap:54px;align-items:center;white-space:nowrap;animation:marq 30s linear infinite;width:max-content;padding:16px 0}
 .trust .marq span{color:var(--mut);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase}
 .trust .marq b{font-family:"DM Sans";font-size:16px;color:var(--ink);letter-spacing:.02em}
+.trust .marq img{height:32px;max-width:190px;object-fit:contain}
 @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .mission .mdot{position:absolute;border-radius:50%;background:#7FB0FF;box-shadow:0 0 12px 4px rgba(96,165,250,.45);animation:floaty 7s ease-in-out infinite;opacity:.7}
 .cta-band{background:linear-gradient(120deg,#0A1628,#0A2E5E,#123C78,#0A1628);background-size:300% 300%;animation:bgshift 14s ease infinite}
