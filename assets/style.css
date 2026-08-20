@@ -81,7 +81,8 @@ img{max-width:100%}
 /* industries */
 .ind{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;transition:.18s;position:relative;overflow:hidden}
 .ind:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(10,22,40,.10);border-color:#C9D8F5}
-.ind .ic{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#0066FF,#4F8DFF);opacity:.9;margin-bottom:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:"DM Sans";font-size:15px}
+.ind .ic{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#0066FF,#4F8DFF);margin-bottom:14px;display:flex;align-items:center;justify-content:center;color:#fff}
+.ind .ic svg{width:22px;height:22px;stroke:#fff}
 .ind h3{font-size:16px;margin-bottom:4px}
 .ind .zh{color:var(--blue);font-size:13px;font-weight:600;margin-left:6px}
 .ind p{color:var(--mut);font-size:13px;line-height:1.55}
