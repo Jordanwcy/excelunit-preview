@@ -89,7 +89,7 @@ img{max-width:100%}
 /* mission band */
 .mission{background:var(--navy);color:#fff;position:relative;overflow:hidden}
 .mission .wrap{padding:84px 24px;text-align:center}
-.mission .kicker{color:#7FB0FF;font-weight:600;letter-spacing:.18em;font-size:12px;text-transform:uppercase}
+.mission .kicker{color:#7FB0FF;font-weight:700;letter-spacing:.22em;font-size:19px;text-transform:uppercase}
 .mission h2{color:#fff;font-size:clamp(26px,3.4vw,40px);max-width:900px;margin:16px auto 18px}
 .mission p{color:#B9C6DC;max-width:760px;margin:0 auto;font-size:16px}
 /* why cards */
