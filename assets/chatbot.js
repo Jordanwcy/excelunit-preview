@@ -17,6 +17,7 @@ var CAT_RULES = [
  [/(raceway|fiberguide|cable management|ladder|basket|理線|線槽)/i,'Cable Management & Raceway','cable-management'],
  [/(rack|cabinet|enclosure|機櫃|機架|frame)/i,'Racks & Cabinets','racks-cabinets'],
  [/(splice|cassette|cartridge|shelf|liu|termination panel|fiber panel|光纖配線|熔接)/i,'Fiber Panels & Splice','fiber-panels'],
+ [/(qwik|splice-on|fusion connector|attenuator|coupler|(fiber|optical|光纖).{0,12}(connector|adapter)|連接器)/i,'Fiber Connectors & Adapters','fiber-connectors'],
  [/(pigtail|mpo|mtp|trunk|(fiber|optical|光纖).{0,12}(patch|cord|jumper|跳線)|尾纖|\b(lc|sc|st)\b.{0,20}(cord|patch|jumper|跳線)|(cord|patch|jumper).{0,20}\b(lc|sc|st)\b)/i,'Fiber Patch Cords & MPO','fiber-patch-cords'],
  [/(fiber|optical|光纖|光纜|om[1-5]|os2|singlemode|multimode|單模|多模).{0,16}(cable|纜)|光纜/i,'Fiber Cable','fiber-cable'],
  [/(patch panel|modular panel|配線架|panel)/i,'Copper Panels & 110','copper-panels'],
