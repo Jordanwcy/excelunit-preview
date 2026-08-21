@@ -75,6 +75,8 @@ img{max-width:100%}
 .herov2 p.sub{max-width:760px;margin:0 auto}
 .herov2 .btns{justify-content:center}
 .herov2 .scene{opacity:.55}
+#hero3d{position:absolute;right:0;top:0;width:60%;height:100%;z-index:1;pointer-events:none}
+@media(max-width:1080px){#hero3d{display:none}}
 .scrollcue{position:absolute;bottom:185px;left:50%;transform:translateX(-50%);width:22px;height:36px;border:2px solid rgba(255,255,255,.35);border-radius:12px;z-index:2}
 .scrollcue:after{content:"";position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#7FB0FF;animation:cue 1.8s ease-in-out infinite}
 @keyframes cue{0%,100%{transform:translateY(0);opacity:1}60%{transform:translateY(10px);opacity:.2}}
