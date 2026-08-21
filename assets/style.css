@@ -62,6 +62,18 @@ body.inner .top{position:sticky;background:var(--navy);border-bottom-color:rgba(
 .stats span{color:#8FA2C0;font-size:13px}
 
 
+#pbar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#0066FF,#7FB0FF);z-index:60;transition:width .1s linear;border-radius:0 2px 2px 0}
+.sec h2{position:relative;padding-bottom:12px}
+.sec h2:after{content:"";position:absolute;left:0;bottom:0;width:56px;height:3px;border-radius:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .7s .3s cubic-bezier(.2,.7,.2,1)}
+.sec h2.on:after,body.inner .sec h2:after{transform:scaleX(1)}
+@keyframes icopop{0%{transform:scale(.5);opacity:0}70%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+.ind.on .ic{animation:icopop .6s .25s cubic-bezier(.2,.7,.2,1) both}
+.mission{background:linear-gradient(140deg,#0A1628,#0D2242,#0A2E5E,#0A1628);background-size:260% 260%;animation:bgshift 18s ease infinite}
+.stats div{transition:background .3s}
+.stats div:hover{background:rgba(18,42,80,.85)}
+.stats b{transition:transform .3s}
+.stats div:hover b{transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){#pbar{display:none}.sec h2:after{transform:scaleX(1);transition:none}.ind.on .ic{animation:none}.mission{animation:none}}
 /* hero entrance */
 @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 .herov2 .kicker{animation:rise .8s .1s cubic-bezier(.2,.7,.2,1) both}
@@ -102,7 +114,7 @@ body.inner .top{position:sticky;background:var(--navy);border-bottom-color:rgba(
 .ind .zh{color:var(--blue);font-size:13px;font-weight:600;margin-left:6px}
 .ind p{color:var(--mut);font-size:13px;line-height:1.55}
 /* mission band */
-.mission{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.mission{color:#fff;position:relative;overflow:hidden}
 .mission .wrap{padding:84px 24px;text-align:center}
 .mission .kicker{color:#7FB0FF;font-weight:700;letter-spacing:.24em;font-size:28px;text-transform:uppercase}
 .mission h2{color:#fff;font-size:clamp(26px,3.4vw,40px);max-width:900px;margin:16px auto 18px}
