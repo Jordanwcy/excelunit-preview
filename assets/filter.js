@@ -1,7 +1,8 @@
 (function(){
 var grid=document.getElementById('pgrid');if(!grid)return;
 var cards=[].slice.call(grid.children);
-var q='',b=new URLSearchParams(location.search).get('brand')||'';
+var sp=new URLSearchParams(location.search);
+var q=sp.get('q')||'',b=sp.get('brand')||'';
 var chips=[].slice.call(document.querySelectorAll('.fchip'));
 var more=document.getElementById('more');var SHOW=60,shown=SHOW;
 function apply(){var t=q.toLowerCase();
@@ -15,6 +16,7 @@ if(b&&ch.getAttribute('data-b')===b){chips.forEach(function(x){x.classList.remov
 ch.addEventListener('click',function(){b=ch.getAttribute('data-b');shown=SHOW;
 chips.forEach(function(x){x.classList.toggle('on',x===ch)});apply()});});
 var inp=document.querySelector('.fq');
+if(inp&&q)inp.value=q;
 inp&&inp.addEventListener('input',function(e){q=e.target.value.trim();shown=SHOW;apply()});
 more&&more.addEventListener('click',function(){shown+=120;apply()});
 apply();})();
