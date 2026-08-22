@@ -363,6 +363,20 @@ section.sec{padding:72px 0}
 .featall{color:var(--blue);font-weight:700;font-size:13.5px}
 .featall:hover{text-decoration:underline}
 #featgrid{margin-top:20px}
+/* product search-command hero */
+.phero{background:linear-gradient(150deg,var(--navy),#0D2242 65%,#0A2E5E);color:#fff;padding:64px 0 56px}
+.phero h1{font-size:clamp(30px,3.8vw,48px)}
+.phero .psub{color:#B9C6DC;margin:12px 0 26px;font-size:16px;max-width:640px}
+.psearch{display:flex;background:#fff;border-radius:14px;overflow:hidden;max-width:760px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.psearch input{flex:1;border:0;padding:19px 24px;font-size:16.5px;font-family:inherit;min-width:0}
+.psearch input:focus{outline:none}
+.psearch button{background:var(--blue);color:#fff;border:0;padding:0 34px;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer}
+.psearch button:hover{background:var(--blue-d)}
+.bpill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(127,176,255,.35);color:#DCE8FA;border-radius:20px;padding:8px 18px;font-size:13.5px;font-weight:700;margin:24px 10px 0 0;transition:.18s}
+.bpill:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.bpill em{font-style:normal;color:#7FB0FF;font-weight:600}
+.bpill:hover em{color:#fff}
+@media(max-width:600px){.psearch button{padding:0 20px;font-size:14px}.psearch input{padding:15px 16px;font-size:15px}.phero{padding:44px 0 40px}}
 /* news editorial layout */
 .nhero{background:linear-gradient(150deg,var(--navy),#0D2242 65%,#0A2E5E);color:#fff;padding:120px 0 52px}
 .nhero h1{font-size:clamp(28px,3.6vw,44px)}
