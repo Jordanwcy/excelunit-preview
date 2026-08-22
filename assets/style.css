@@ -355,13 +355,17 @@ section.sec{padding:72px 0}
 .hl h3{font-size:15.5px;line-height:1.35;margin-bottom:8px}
 .hl p{color:var(--mut);font-size:12.5px}
 .hl .more{color:var(--blue);font-size:12px;font-weight:700;display:inline-block;margin-top:10px}
+.feathead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.featall{color:var(--blue);font-weight:700;font-size:13.5px}
+.featall:hover{text-decoration:underline}
+#featgrid{margin-top:20px}
 /* news editorial layout */
 .nhero{background:linear-gradient(150deg,var(--navy),#0D2242 65%,#0A2E5E);color:#fff;padding:120px 0 52px}
 .nhero h1{font-size:clamp(28px,3.6vw,44px)}
 .nhero p{color:#B9C6DC;max-width:640px;margin-top:12px;font-size:16px}
 .nfeat{display:grid;grid-template-columns:minmax(300px,52%) minmax(0,1fr);background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(10,22,40,.1);transition:.25s}
 .nfeat:hover{transform:translateY(-3px);box-shadow:0 26px 60px rgba(10,22,40,.16)}
-.nfimg{position:relative;min-height:320px;background-size:cover;background-position:center}
+.nfimg{position:relative;min-height:380px;background-size:cover;background-position:center}
 .nfbody{padding:36px 38px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
 .nfbody h2{font-size:clamp(20px,2.2vw,27px);line-height:1.25;margin:10px 0 12px}
 .nfbody p{color:var(--mut);font-size:14.5px}
@@ -371,7 +375,7 @@ section.sec{padding:72px 0}
 .newsc .im{position:relative}
 .newsc .im img{height:190px;width:100%;object-fit:cover}
 .newsc .nmore,.hl .nmore{color:var(--blue);font-size:12.5px;font-weight:700;display:inline-block;margin-top:10px}
-@media(max-width:880px){.nfeat{grid-template-columns:1fr}.nfimg{min-height:210px}.nfbody{padding:24px 20px}.nhero{padding:96px 0 40px}}
+@media(max-width:880px){.nfeat{grid-template-columns:1fr}.nfimg{min-height:0;aspect-ratio:16/9}.nfbody{padding:24px 20px}.nhero{padding:96px 0 40px}}
 /* spotlight motion */
 .spot{transition:opacity .7s ease,transform .7s ease,box-shadow .3s ease}
 .spot.rv{opacity:0;transform:translateX(-40px)}
