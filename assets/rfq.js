@@ -23,6 +23,30 @@ if (!form) return;
   });
 });
 
+/* attachments */
+var files = [];
+var finput = document.getElementById('rfiles');
+function renderFiles(){
+  var box = document.getElementById('rflist'); if(!box) return;
+  box.innerHTML = files.map(function(f,i){
+    return '<span class="rfile">'+f.name.replace(/[<>&]/g,'')+' <b>'+(f.size/1048576).toFixed(1)+'MB</b><button type="button" data-i="'+i+'" aria-label="Remove">✕</button></span>';
+  }).join('');
+}
+if (finput){
+  finput.addEventListener('change', function(){
+    [].slice.call(finput.files).forEach(function(f){
+      if (files.length >= 5) return;
+      if (f.size > 15*1048576){ alert(f.name+' is over 15 MB — please email it to info@excelunit.com.hk instead.'); return; }
+      files.push(f);
+    });
+    finput.value=''; renderFiles();
+  });
+  document.getElementById('rflist').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-i]'); if(!b) return;
+    files.splice(+b.getAttribute('data-i'),1); renderFiles();
+  });
+}
+
 /* ?pn= prefill from product pages */
 var pn = new URLSearchParams(location.search).get('pn');
 if (pn) {
@@ -63,7 +87,8 @@ form.addEventListener('submit', function(e){
     products: products, sector: picked('sector')[0]||'', stage: picked('stage')[0]||'',
     timeline: picked('timeline')[0]||'', scale: picked('scale')[0]||'', part_numbers: pns,
     name: name, company: company, email: email, phone: phone,
-    source: location.pathname + location.search, submitted_at: new Date().toISOString()
+    source: location.pathname + location.search, submitted_at: new Date().toISOString(),
+    attachments: files.map(function(f){return f.name+' ('+(f.size/1048576).toFixed(1)+'MB)';})
   };
   var btn = form.querySelector('.rsubmit'); btn.disabled = true; btn.textContent = 'Sending… 傳送中';
 
@@ -75,7 +100,8 @@ form.addEventListener('submit', function(e){
     if (payload.sector) bits.push(payload.sector.replace(/ [^ ]+$/,''));
     if (payload.timeline) bits.push(payload.timeline.replace(/ [^ ]+$/,''));
     document.getElementById('oksum').textContent =
-      'We’ve logged your request'+(bits.length?' — '+bits.join(' · '):'')+'. A copy of our reply goes to '+email+'.';
+      'We’ve logged your request'+(bits.length?' — '+bits.join(' · '):'')+'. A copy of our reply goes to '+email+'.'
+      + (files.length && !LEAD_API ? ' IMPORTANT: your email app just opened a draft — please drag your '+files.length+' file(s) ('+files.map(function(f){return f.name}).join(', ')+') into it before sending. 請將檔案拖入已開啟的電郵。' : '');
     ok.scrollIntoView({block:'center'});
   }
   function mailFallback(){
@@ -88,6 +114,7 @@ form.addEventListener('submit', function(e){
       'Timeline: '+(payload.timeline||'-'),
       'Scale: '+(payload.scale||'-'), '',
       'Part numbers / BOM:', pns||'-', '',
+      (files.length ? 'ATTACHMENTS — I am attaching to this email: '+payload.attachments.join(', ') : ''),
       'Submitted from: '+location.href
     ];
     location.href = 'mailto:info@excelunit.com.hk?subject='
@@ -96,9 +123,17 @@ form.addEventListener('submit', function(e){
     done();
   }
   if (LEAD_API){
-    fetch(LEAD_API, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)})
-      .then(function(r){ if(!r.ok) throw 0; done(); })
-      .catch(function(){ mailFallback(); });
+    var req;
+    if (files.length){
+      var fd = new FormData();
+      fd.append('payload', JSON.stringify(payload));
+      files.forEach(function(f){ fd.append('files', f, f.name); });
+      req = fetch(LEAD_API, {method:'POST', body: fd});
+    } else {
+      req = fetch(LEAD_API, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+    }
+    req.then(function(r){ if(!r.ok) throw 0; done(); })
+       .catch(function(){ mailFallback(); });
   } else {
     mailFallback();
   }

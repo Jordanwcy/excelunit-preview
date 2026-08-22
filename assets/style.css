@@ -463,6 +463,14 @@ section.sec{padding:72px 0}
 .qsplit{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
 .rsubmit{width:100%;font-size:15px;padding:13px}
 .rmicro{color:var(--mut);font-size:12px;margin-top:12px;text-align:center}
+.rattach{display:flex;align-items:center;gap:9px;margin-top:10px;border:1.5px dashed var(--line);border-radius:10px;padding:11px 14px;font-size:13px;font-weight:600;color:var(--blue);cursor:pointer;transition:.15s}
+.rattach:hover{border-color:var(--blue);background:#F5F9FF}
+.rattach span{color:var(--mut);font-weight:400;font-size:11.5px;margin-left:auto}
+.rflist{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.rfile{display:inline-flex;align-items:center;gap:7px;background:#EEF4FF;color:#1A2B4A;border-radius:16px;padding:5px 8px 5px 13px;font-size:12px;font-weight:600}
+.rfile b{color:var(--mut);font-weight:500}
+.rfile button{background:none;border:0;color:var(--mut);cursor:pointer;font-size:13px;padding:0 4px}
+.rfile button:hover{color:var(--red)}
 .rfqok{background:var(--card);padding:60px 48px;text-align:center}
 .okmark{width:64px;height:64px;border-radius:50%;background:#E6F7EE;color:var(--ok);font-size:30px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
 .rfqok h2{font-size:24px}
