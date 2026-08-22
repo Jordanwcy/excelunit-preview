@@ -160,7 +160,7 @@ function answer(msg){
   if (p.intent==='quote'){
     bubble('bot','For distributor pricing, send the part numbers via our quote form — we reply within 1 business day. 一個工作天內回覆。');
     var c=el('div','cbchips'); var a=el('a','cbchip','Request a Quote 索取報價');
-    a.href='https://excelunit.wixforms.com/f/7481548290371093671'; a.target='_blank'; c.appendChild(a);
+    a.href=R+'contact.html#quote'; c.appendChild(a);
     log.appendChild(c); return;
   }
   if (p.intent==='contact'){ bubble('bot','☎ +852 2305 2688 · ✉ info@excelunit.com.hk<br>Unit 01-03, 17/F Tower A, Regent Centre, Kwai Chung, Hong Kong'); return; }
