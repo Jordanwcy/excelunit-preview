@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Product page design options — internal</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.optlbl{background:#111;color:#fff;font-size:14px;font-weight:700;padding:10px 24px;letter-spacing:.06em}
+.optlbl span{color:#7FB0FF;font-weight:400;margin-left:12px}
+.vhero{background:linear-gradient(150deg,#0A1628,#0D2242 65%,#0A2E5E);color:#fff;padding:64px 0}
+.vhero h1{font-size:clamp(28px,3.6vw,46px)}
+.vhero p{color:#B9C6DC;margin:10px 0 24px}
+.vsearch{display:flex;background:#fff;border-radius:14px;overflow:hidden;max-width:720px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.vsearch input{flex:1;border:0;padding:20px 24px;font-size:17px;font-family:inherit}
+.vsearch button{background:var(--blue);color:#fff;border:0;padding:0 34px;font-size:16px;font-weight:700;font-family:inherit}
+.bp{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(127,176,255,.35);color:#DCE8FA;border-radius:20px;padding:8px 18px;font-size:13.5px;font-weight:700;margin:22px 10px 0 0}
+.bp em{font-style:normal;color:#7FB0FF;font-weight:600}
+.vtile{position:relative;border-radius:14px;overflow:hidden;display:block;height:190px;background:#fff;border:1px solid var(--line)}
+.vtile img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.vtile:hover img{transform:scale(1.05)}
+.vov{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(6,16,33,.88));padding:34px 16px 13px;color:#fff}
+.vov b{display:block;font-family:"Space Grotesk",Inter,sans-serif;font-size:15.5px}
+.vov span{color:#B9C6DC;font-size:12px}
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.vsplit{display:grid;grid-template-columns:250px minmax(0,1fr);gap:30px;align-items:start}
+.vrail{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 0;position:sticky;top:80px}
+.vrail h5{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);padding:10px 16px 6px}
+.vrail a{display:flex;justify-content:space-between;padding:9px 16px;font-size:13.5px;font-weight:600;color:#2A3244}
+.vrail a:hover{background:#F2F6FE;color:var(--blue)}
+.vrail em{font-style:normal;color:var(--mut);font-weight:500}
+@media(max-width:880px){.vgrid{grid-template-columns:1fr 1fr}.vsplit{grid-template-columns:1fr}}
+</style></head><body class="inner" style="background:#F7F8FA">
+<div style="background:#0A1628;color:#fff;padding:26px 24px"><h1 style="font-size:22px">Product page — 3 design directions 選擇設計</h1>
+<p style="color:#8FA6C8;font-size:13.5px;margin-top:6px">Reply with A, B or C (or "keep current"). Each is rendered with real data.</p></div>
+
+<div class="optlbl">OPTION A — Search Command<span>search-first dark hero · buyers with part numbers land straight in the box</span></div>
+<div class="vhero"><div class="wrap">
+<h1>Find any part in seconds.</h1>
+<p>2,163 SYSTIMAX · NETCONNECT · CPI · KRONE products — datasheets, photos and Hong Kong stock.</p>
+<div class="vsearch"><input placeholder="Part number, comcode or keyword — 760237032, Cat6A LSZH, MPO…"><button>Search</button></div>
+<div><a class="bp" href="b/systimax.html">SYSTIMAX <em>1499</em></a><a class="bp" href="b/netconnect.html">NETCONNECT <em>547</em></a><a class="bp" href="b/cpi.html">CPI <em>80</em></a><a class="bp" href="b/krone.html">KRONE <em>37</em></a></div>
+</div></div>
+<section class="sec" style="padding:26px 0 40px"><div class="wrap"><p class="lead">…followed by the current category grid below.</p></div></section>
+
+<div class="optlbl">OPTION B — Photo Wall<span>image-forward category tiles · feels like a modern storefront</span></div>
+<section class="sec"><div class="wrap">
+<h2>Product Catalogue <span style="color:var(--blue);font-size:22px">產品目錄</span></h2>
+<p class="lead" style="margin-bottom:18px">Browse 13 categories — every tile a real product photo.</p>
+<div class="vgrid"><a class="vtile" href="c/copper-cable.html"><img src="img/p/commscope-netconnect-cs31z1-vlt-c6-4-23-u-utp-cpk-3-305m-box.jpg" alt=""><div class="vov"><b>Copper Cable</b><span>銅纜 · 105 products</span></div></a><a class="vtile" href="c/copper-patch-cords.html"><img src="img/p/commscope-uniprise-unc6-cat6-patch-cord.jpg" alt=""><div class="vov"><b>Copper Patch Cords</b><span>銅跳線 · 236 products</span></div></a><a class="vtile" href="c/jacks-outlets.html"><img src="img/p/commscope-hftp-no-l102-e.jpg" alt=""><div class="vov"><b>Jacks, Outlets & Faceplates</b><span>插座面板 · 339 products</span></div></a><a class="vtile" href="c/copper-panels.html"><img src="img/p/commscope-systimax-1100-patch-panel-1100-angled-gs3-panel-48-por.jpg" alt=""><div class="vov"><b>Copper Panels & 110 Systems</b><span>配線架 · 91 products</span></div></a><a class="vtile" href="c/fiber-cable.html"><img src="img/p/commscope-systimax-fiber-cable-760257891-c-048-ln-8z-m12yl-21g-09x.jpg" alt=""><div class="vov"><b>Fiber Cable</b><span>光纜 · 506 products</span></div></a><a class="vtile" href="c/fiber-patch-cords.html"><img src="img/p/commscope-systimax-om4-mpo-mpo-female-female-lszh-fiber-assembly.jpg" alt=""><div class="vov"><b>Fiber Patch Cords & MPO</b><span>光纖跳線 · 65 products</span></div></a><a class="vtile" href="c/fiber-panels.html"><img src="img/p/commscope-1u-panel-24lc-dupl-mm.jpg" alt=""><div class="vov"><b>Fiber Panels & Splice</b><span>光纖配線架 · 330 products</span></div></a><a class="vtile" href="c/fiber-connectors.html"><img src="img/p/commscope-adapter-plate-assy-6-lc-dup-sm.jpg" alt=""><div class="vov"><b>Fiber Connectors & Adapters</b><span>光纖連接器 · 164 products</span></div></a><a class="vtile" href="c/racks-cabinets.html"><img src="img/p/rk6-45a.jpg" alt=""><div class="vov"><b>Racks & Cabinets</b><span>機櫃 · 78 products</span></div></a><a class="vtile" href="c/cable-management.html"><img src="img/p/commscope-fiberguide-raceway-system-fgs-mshs-b-extrusion-4x6-tro.jpg" alt=""><div class="vov"><b>Cable Management & Raceway</b><span>理線系統 · 133 products</span></div></a><a class="vtile" href="c/aim.html"><img src="img/p/commscope-systimax-ipatch-intelligent-patch-panel-360-ipatch-1100-gs6-.jpg" alt=""><div class="vov"><b>Intelligent Infrastructure</b><span>智能布線 · 20 products</span></div></a><a class="vtile" href="c/voice-krone.html"><img src="img/p/commscope-krone-7083-1-401-00-evz-kb-bc40-mb.jpg" alt=""><div class="vov"><b>Voice & Krone</b><span>語音系統 · 31 products</span></div></a></div>
+</div></section>
+
+<div class="optlbl">OPTION C — Pro Directory<span>sticky category rail + live product grid · closest to RS / Digi-Key workflow</span></div>
+<section class="sec"><div class="wrap">
+<div class="vsplit">
+<div class="vrail"><h5>Brands</h5><a href="#">SYSTIMAX<em>1499</em></a><a href="#">NETCONNECT<em>547</em></a><a href="#">CPI<em>80</em></a><a href="#">KRONE<em>37</em></a>
+<h5>Categories</h5><a href="c/copper-cable.html">Copper Cable<em>105</em></a><a href="c/copper-patch-cords.html">Copper Patch Cords<em>236</em></a><a href="c/jacks-outlets.html">Jacks, Outlets & Faceplates<em>339</em></a><a href="c/copper-panels.html">Copper Panels & 110 Systems<em>91</em></a><a href="c/fiber-cable.html">Fiber Cable<em>506</em></a><a href="c/fiber-patch-cords.html">Fiber Patch Cords & MPO<em>65</em></a><a href="c/fiber-panels.html">Fiber Panels & Splice<em>330</em></a><a href="c/fiber-connectors.html">Fiber Connectors & Adapters<em>164</em></a><a href="c/racks-cabinets.html">Racks & Cabinets<em>78</em></a><a href="c/cable-management.html">Cable Management & Raceway<em>133</em></a><a href="c/aim.html">Intelligent Infrastructure<em>20</em></a><a href="c/voice-krone.html">Voice & Krone<em>31</em></a><a href="c/tools-accessories.html">Tools & Accessories<em>65</em></a></div>
+<div><div class="fbar2" style="margin-bottom:14px"><input class="fq" placeholder="Search 2,163 part numbers…"></div>
+<h2 style="font-size:20px;margin-bottom:14px">Popular right now — MPO trunks</h2>
+<div class="grid g3"><a class="pc" href="p/commscope-systimax-om5-mpo-mpo-female-female-lszh-wideband-fiber-assem.html"><div class="im"><img src="img/p/commscope-systimax-om5-mpo-mpo-female-female-lszh-wideband-fiber-assem.jpg"></div><div class="bd"><h3>CommScope SYSTIMAX OM5 MPO-MPO Female-Female LSZH Wi</h3><span class="pn">URVMPMPGD-NAM012</span></div></a><a class="pc" href="p/commscope-systimax-om4-mpo-mpo-12f-lszh-array-fiber-assembly.html"><div class="im"><img src="img/p/commscope-systimax-om4-mpo-mpo-12f-lszh-array-fiber-assembly.jpg"></div><div class="bd"><h3>CommScope SYSTIMAX OM4 MPO-MPO 12F LSZH Array Fiber </h3><span class="pn">FJXMPMPAH-MBM022</span></div></a><a class="pc" href="p/commscope-360dp-8mpo.html"><div class="im"><img src="img/p/commscope-360dp-8mpo.jpg"></div><div class="bd"><h3>CommScope 360DP-8MPO</h3><span class="pn">760107524</span></div></a><a class="pc" href="p/commscope-systimax-om4-mpo-mpo-female-female-lszh-fiber-assembly-1.html"><div class="im"><img src="img/p/commscope-systimax-om4-mpo-mpo-female-female-lszh-fiber-assembly-1.jpg"></div><div class="bd"><h3>CommScope SYSTIMAX OM4 MPO-MPO Female-Female LSZH Fi</h3><span class="pn">FRXMPMPGD-MA</span></div></a><a class="pc" href="p/commscope-systimax-om4-mpo-mpo-12f-lszh-array-fiber-assembly-1.html"><div class="im"><img src="img/p/commscope-systimax-om4-mpo-mpo-12f-lszh-array-fiber-assembly-1.jpg"></div><div class="bd"><h3>CommScope SYSTIMAX OM4 MPO-MPO 12F LSZH Array Fiber </h3><span class="pn">FJXMPMPAD-MB</span></div></a></div></div>
+</div>
+</div></section>
+</body></html>
