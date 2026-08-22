@@ -330,6 +330,27 @@ section.sec{padding:72px 0}
 .mini p{color:var(--mut);font-size:12.5px;line-height:1.55}
 .mini .chips3{margin-top:9px;margin-bottom:0}
 .mini .chips3 a{font-size:11px;padding:3px 10px}
+/* spotlight motion */
+.spot{transition:opacity .7s ease,transform .7s ease,box-shadow .3s ease}
+.spot.rv{opacity:0;transform:translateX(-40px)}
+.spot.rev.rv{transform:translateX(40px)}
+.spot.rv.on{opacity:1;transform:none}
+.spot:hover{box-shadow:0 22px 54px rgba(10,22,40,.13)}
+.spot .simg{transition:background-size .6s ease}
+.spot.rv .scap{opacity:0;transform:translateY(10px)}
+.spot.rv.on .scap{opacity:1;transform:none;transition:opacity .5s ease .35s,transform .5s ease .35s}
+.spot.rv.on .chips3 a{animation:chippop .45s ease backwards}
+.spot.rv.on .chips3 a:nth-child(1){animation-delay:.25s}
+.spot.rv.on .chips3 a:nth-child(2){animation-delay:.33s}
+.spot.rv.on .chips3 a:nth-child(3){animation-delay:.41s}
+.spot.rv.on .chips3 a:nth-child(4){animation-delay:.49s}
+@keyframes chippop{from{opacity:0;transform:translateY(8px) scale(.92)}to{opacity:1;transform:none}}
+.mini{transition:opacity .6s ease,transform .6s ease,box-shadow .25s ease,border-color .25s ease}
+.mini:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(10,22,40,.1);border-color:var(--blue)}
+.uchero h1,.uchero p,.uchero .loc{animation:rise .8s cubic-bezier(.22,.9,.36,1) backwards}
+.uchero p{animation-delay:.18s}
+.uchero .loc{animation-delay:.36s}
+@media(prefers-reduced-motion:reduce){.uchero h1,.uchero p,.uchero .loc,.spot.rv.on .chips3 a{animation:none}.spot.rv{opacity:1;transform:none}.spot.rv .scap{opacity:1;transform:none}}
 /* brand badges + catalogue filters */
 .pc .im{position:relative}
 .bb{position:absolute;left:8px;top:8px;font-size:9.5px;font-weight:800;letter-spacing:.08em;padding:3px 8px;border-radius:5px;color:#fff;background:#5A6478}
