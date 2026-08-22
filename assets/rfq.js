@@ -34,6 +34,7 @@ if (pn) {
 
 function picked(name){
   var g = document.querySelector('.qchips[data-name="'+name+'"]');
+  if (!g) return [];
   return [].slice.call(g.querySelectorAll('.qchip.on')).map(function(x){return x.textContent;});
 }
 function val(id){ return document.getElementById(id).value.trim(); }
