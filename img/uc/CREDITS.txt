@@ -5,3 +5,5 @@ dc-racks: NOIRLab/NSF/AURA/T. Slovinský (CC BY 4.0, Wikimedia Commons)
 dc-aisle: NOIRLab/NSF/AURA/T. Slovinsky (CC BY 4.0, Wikimedia Commons)
 airport: Diego Delso (CC BY-SA 3.0, Wikimedia Commons)
 skyline: Jérémy Thomas (CC BY 3.0, Wikimedia Commons)
+microsoft-tower.jpg — "Microsoft at City Center East, Bellevue, with old logo" — Wikimedia Commons, CC BY-SA 2.0
+equinix-dc.jpg — "Equinix DA11 Exterior" — Wikimedia Commons, CC BY-SA 4.0
