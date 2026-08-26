@@ -1,13 +1,12 @@
-/* Excel Unit RFQ form — selection-driven quote request.
-   Submits JSON to LEAD_API (our own backend). Until the API is activated,
-   falls back to a structured email so no lead is ever lost. */
+/* Excel Unit RFQ (Hong Kong) — bilingual EN/繁中, hardened.
+   POSTs to the lead API with a 15s timeout; on failure shows a clear
+   message with our email (no auto-opened mail client). */
 (function(){
 'use strict';
 var LEAD_API = 'https://excelunit-lead-api.onrender.com/api/lead';
 var form = document.getElementById('rfqform');
 if (!form) return;
 
-/* chip groups */
 [].slice.call(document.querySelectorAll('.qchips')).forEach(function(g){
   var multi = g.hasAttribute('data-multi');
   [].slice.call(g.querySelectorAll('.qchip')).forEach(function(ch){
@@ -15,15 +14,15 @@ if (!form) return;
       if (multi) ch.classList.toggle('on');
       else {
         var was = ch.classList.contains('on');
-        [].slice.call(g.querySelectorAll('.qchip')).forEach(function(x){x.classList.remove('on');});
+        [].slice.call(g.querySelectorAll('.qchip')).forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed','false');});
         if (!was) ch.classList.add('on');
       }
+      ch.setAttribute('aria-pressed', ch.classList.contains('on') ? 'true' : 'false');
       g.classList.remove('bad');
     });
   });
 });
 
-/* attachments */
 var files = [];
 var finput = document.getElementById('rfiles');
 function renderFiles(){
@@ -36,7 +35,7 @@ if (finput){
   finput.addEventListener('change', function(){
     [].slice.call(finput.files).forEach(function(f){
       if (files.length >= 5) return;
-      if (f.size > 15*1048576){ alert(f.name+' is over 15 MB — please email it to info@excelunit.com.hk instead.'); return; }
+      if (f.size > 15*1048576){ alert(f.name+' is over 15 MB — please email it to info@excelunit.com.hk instead. 檔案超過15MB，請直接電郵。'); return; }
       files.push(f);
     });
     finput.value=''; renderFiles();
@@ -47,13 +46,11 @@ if (finput){
   });
 }
 
-/* ?pn= prefill from product pages */
 var pn = new URLSearchParams(location.search).get('pn');
 if (pn) {
   var ta = document.getElementById('rpns');
-  ta.value = pn + '  × ';
-  var prods = document.querySelector('.qchips[data-name="products"]');
-  document.getElementById('quote').scrollIntoView();
+  if (ta) ta.value = pn + '  × ';
+  var q = document.getElementById('quote'); if (q) q.scrollIntoView();
 }
 
 function picked(name){
@@ -61,7 +58,11 @@ function picked(name){
   if (!g) return [];
   return [].slice.call(g.querySelectorAll('.qchip.on')).map(function(x){return x.textContent;});
 }
-function val(id){ return document.getElementById(id).value.trim(); }
+function val(id){ var el=document.getElementById(id); return el ? el.value.trim() : ''; }
+['rname','rcompany','remail','rphone','rpns'].forEach(function(id){
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('input', function(){ el.classList.remove('bad'); });
+});
 
 form.addEventListener('submit', function(e){
   e.preventDefault();
@@ -85,57 +86,37 @@ form.addEventListener('submit', function(e){
 
   var payload = {
     products: products, sector: picked('sector')[0]||'', stage: picked('stage')[0]||'',
-    timeline: picked('timeline')[0]||'', scale: picked('scale')[0]||'', part_numbers: pns,
+    timeline: picked('timeline')[0]||'', scale: '', part_numbers: pns,
     name: name, company: company, email: email, phone: phone,
-    source: location.pathname + location.search, submitted_at: new Date().toISOString(),
-    attachments: files.map(function(f){return f.name+' ('+(f.size/1048576).toFixed(1)+'MB)';})
+    website: val('rhp'),
+    source: location.pathname + location.search, submitted_at: new Date().toISOString()
   };
   var btn = form.querySelector('.rsubmit'); btn.disabled = true; btn.textContent = 'Sending… 傳送中';
+  var ctl = ('AbortController' in window) ? new AbortController() : null;
+  var timer = ctl ? setTimeout(function(){ ctl.abort(); }, 15000) : null;
 
   function done(){
+    if (window.gtag) gtag('event','generate_lead',{method:'rfq_form',site:'hk'});
     form.hidden = true;
     var ok = document.getElementById('rfqok'); ok.hidden = false;
-    var bits = [];
-    if (products.length) bits.push(products.join(', '));
-    if (payload.sector) bits.push(payload.sector.replace(/ [^ ]+$/,''));
-    if (payload.timeline) bits.push(payload.timeline.replace(/ [^ ]+$/,''));
-    document.getElementById('oksum').textContent =
-      'We’ve logged your request'+(bits.length?' — '+bits.join(' · '):'')+'. A copy of our reply goes to '+email+'.'
-      + (files.length && !LEAD_API ? ' IMPORTANT: your email app just opened a draft — please drag your '+files.length+' file(s) ('+files.map(function(f){return f.name}).join(', ')+') into it before sending. 請將檔案拖入已開啟的電郵。' : '');
+    var s = document.getElementById('oksum');
+    if (s) s.textContent = 'We’ve logged your request — a confirmation and our reply go to '+email+'. 已收到您的查詢，確認電郵已發送。';
     ok.scrollIntoView({block:'center'});
   }
-  function mailFallback(){
-    var lines = [
-      'Quote request from '+name+' ('+company+')',
-      'Email: '+email+(phone?'   Phone: '+phone:''), '',
-      'Products: '+(products.join(', ')||'-'),
-      'Sector: '+(payload.sector||'-'),
-      'Stage: '+(payload.stage||'-'),
-      'Timeline: '+(payload.timeline||'-'),
-      'Scale: '+(payload.scale||'-'), '',
-      'Part numbers / BOM:', pns||'-', '',
-      (files.length ? 'ATTACHMENTS — I am attaching to this email: '+payload.attachments.join(', ') : ''),
-      'Submitted from: '+location.href
-    ];
-    location.href = 'mailto:info@excelunit.com.hk?subject='
-      + encodeURIComponent('Quote request — '+company+' ('+(products[0]||'general')+')')
-      + '&body=' + encodeURIComponent(lines.join('\n'));
-    done();
+  function fail(){
+    btn.disabled = false; btn.textContent = 'Send request 提交查詢';
+    err.innerHTML = 'Could not send right now — please try again, or email us at 暫時無法傳送，請直接電郵 <a href="mailto:info@excelunit.com.hk" style="font-weight:700">info@excelunit.com.hk</a>';
   }
-  if (LEAD_API){
-    var req;
-    if (files.length){
-      var fd = new FormData();
-      fd.append('payload', JSON.stringify(payload));
-      files.forEach(function(f){ fd.append('files', f, f.name); });
-      req = fetch(LEAD_API, {method:'POST', body: fd});
-    } else {
-      req = fetch(LEAD_API, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
-    }
-    req.then(function(r){ if(!r.ok) throw 0; done(); })
-       .catch(function(){ mailFallback(); });
+  var req;
+  if (files.length){
+    var fd = new FormData();
+    fd.append('payload', JSON.stringify(payload));
+    files.forEach(function(f){ fd.append('files', f, f.name); });
+    req = fetch(LEAD_API, {method:'POST', body: fd, signal: ctl && ctl.signal});
   } else {
-    mailFallback();
+    req = fetch(LEAD_API, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload), signal: ctl && ctl.signal});
   }
+  req.then(function(r){ if(timer)clearTimeout(timer); if(!r.ok) throw 0; done(); })
+     .catch(function(){ if(timer)clearTimeout(timer); fail(); });
 });
 })();
