@@ -89,7 +89,18 @@ form.addEventListener('submit', function(e){
     timeline: picked('timeline')[0]||'', scale: '', part_numbers: pns,
     name: name, company: company, email: email, phone: phone,
     website: val('rhp'),
-    source: location.pathname + location.search, submitted_at: new Date().toISOString()
+    // source carries first-touch attribution (set site-wide by the GA snippet)
+    // packed into the existing field — no lead-api schema change needed.
+    source: (function(){
+      var s = location.pathname + location.search;
+      try {
+        var a = JSON.parse(sessionStorage.getItem('eut_attr')||'null');
+        if (a) s += ' | first:' + (a.q || a.ref || 'direct') + '→' + (a.land || '');
+      } catch(e){}
+      if (document.referrer) s += ' | ref:' + document.referrer.slice(0,150);
+      return s.slice(0, 480);
+    })(),
+    submitted_at: new Date().toISOString()
   };
   var btn = form.querySelector('.rsubmit'); btn.disabled = true; btn.textContent = 'Sending… 傳送中';
   var ctl = ('AbortController' in window) ? new AbortController() : null;
