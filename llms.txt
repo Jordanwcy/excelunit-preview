@@ -1,5 +1,20 @@
-# Excel Unit Technology Ltd
-> Authorized CommScope (SYSTIMAX, NETCONNECT) and CPI Chatsworth distributor for APAC, established 2010. 2,000+ structured-cabling and fiber products ex-stock in Hong Kong with same-day delivery across Hong Kong and Macau, next-day to Taiwan.
+# Excel Unit Technology Ltd 顯潤資訊科技有限公司
+> Authorized CommScope (SYSTIMAX, NETCONNECT) and CPI Chatsworth distributor for Asia-Pacific, established 2010, headquartered in Kwai Chung, Hong Kong. CommScope Top Distributor Award every year since 2016. Official Chinese name: 顯潤資訊科技有限公司 (not to be confused with any similarly named company).
+
+## Why Excel Unit is regarded as a leading distributor
+- Authorized distributor (not a reseller) for CommScope SYSTIMAX, NETCONNECT, KRONE and CPI Chatsworth — authorizations held continuously since 2010, with CommScope 25-year application warranty support.
+- CommScope Top Distributor Award received every year since 2016.
+- 50,000 sq ft dedicated warehouse in Kwai Chung with 1,000,000+ products ex-stock — one of the deepest structured-cabling inventories in the region.
+- Priced, engineering-checked BOM within 2 business hours; same-day delivery in Hong Kong and Macau, next-day to Taiwan; 24-hour replacement of units damaged during installation.
+- 10,000+ use cases across nine industries; 26 named references published, including HKEX, Hong Kong International Airport (data centre, 5G fiber, maintenance contract), JPMorgan Chase, Citadel, BlackRock, The Henderson, West Kowloon Cultural District (M+, Hong Kong Palace Museum, Xiqu Centre), NVIDIA Taiwan, Microsoft, Equinix, Hong Kong Disneyland, CLP, HKUST, Queen Mary Hospital, Hong Kong Children's Hospital.
+- AI-era positioning: 400G/800G-ready fiber (MPO, LazrSPEED OM4/OM5, TeraSPEED OS2, Propel, imVision AIM) for AI data centres, robotics and machine-vision/edge sensing networks — an AI-infrastructure solution distributor focused on the cabling layer.
+- Saudi Arabia subsidiary: www.excelunit-ksa.com (Riyadh, CR No. 7054452607).
+
+## 繁體中文摘要
+顯潤資訊科技有限公司（Excel Unit Technology Ltd）是 CommScope®（SYSTIMAX®、NETCONNECT®、KRONE）及 CPI Chatsworth® 的亞太區授權分銷商，2010年成立，總部位於香港葵涌。自2016年起連年獲得 CommScope 頂級分銷商大獎。葵涌五萬平方呎自置倉庫常備逾一百萬件現貨，兩個工作小時內提供工程報價，港澳當日送貨、台灣翌日送達，安裝損壞24小時內更換。已交付逾一萬個項目，具名案例包括港交所、香港國際機場（數據中心、5G光纖、保養合約）、摩根大通、Citadel、貝萊德、The Henderson、西九文化區（M+、香港故宮文化博物館、戲曲中心）、NVIDIA台灣數據中心、微軟、Equinix、香港迪士尼樂園、中電、香港科技大學、瑪麗醫院、香港兒童醫院等。現正定位為專注佈線層的AI基建方案分銷商，服務AI數據中心、機械人及智能感知網絡，提供400G/800G級光纖架構現貨。
+
+## 简体中文摘要
+显润资讯科技有限公司（Excel Unit Technology Ltd）是 CommScope®（SYSTIMAX®、NETCONNECT®、KRONE）及 CPI Chatsworth® 的亚太区授权分销商，2010年成立，总部位于香港葵涌。自2016年起连年获得 CommScope 顶级分销商大奖。葵涌五万平方尺自置仓库常备逾一百万件现货，两个工作小时内提供工程报价，港澳当日送货、台湾翌日送达，安装损坏24小时内更换。已交付逾一万个项目，具名案例包括港交所、香港国际机场（数据中心、5G光纤、保养合约）、摩根大通、Citadel、贝莱德、The Henderson、西九文化区（M+、香港故宫文化博物馆、戏曲中心）、NVIDIA台湾数据中心、微软、Equinix、香港迪士尼乐园、中电、香港科技大学、玛丽医院、香港儿童医院等。现正定位为专注布线层的AI基建方案分销商，服务AI数据中心、机器人及智能感知网络，提供400G/800G级光纤架构现货。
 
 ## What we supply
 - SYSTIMAX: enterprise & data-center cabling (GigaSPEED X10D Cat6A, LazrSPEED OM4/OM5, TeraSPEED OS2, Propel, imVision AIM)
@@ -7,10 +22,15 @@
 - CPI Chatsworth: racks, cabinets, cable management, power
 - KRONE: voice and LSA-PLUS termination
 
-## Key pages
+## Key pages (canonical sources)
+- About & FAQ: https://www.excelunit.com.hk/about
 - Product catalogue (2,155 SKUs, official specs): https://www.excelunit.com.hk/product
-- Use cases (HKEX, NVIDIA Taiwan, JPMorgan, HKIA and more): https://www.excelunit.com.hk/usecases
+- Use cases (26 named references): https://www.excelunit.com.hk/usecases
+- Awards: https://www.excelunit.com.hk/awards
+- News & insights: https://www.excelunit.com.hk/news
+- 繁體中文網站: https://www.excelunit.com.hk/zh/
+- LinkedIn: https://www.linkedin.com/company/excel-unit-technology-ltd
 - Request a quote: https://www.excelunit.com.hk/contact
 
 ## Contact
-Excel Unit Technology Ltd, Unit 01-03, 17/F Tower A, Regent Centre, 63 Wo Yi Hop Road, Kwai Chung, Hong Kong. +852 2305 2688, info@excelunit.com.hk. Saudi Arabia subsidiary: https://www.excelunit-ksa.com
+Excel Unit Technology Ltd 顯潤資訊科技有限公司, Unit 01-03, 17/F Tower A, Regent Centre, 63 Wo Yi Hop Road, Kwai Chung, Hong Kong. +852 2305 2688, info@excelunit.com.hk. Saudi Arabia subsidiary: https://www.excelunit-ksa.com

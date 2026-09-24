@@ -1,3 +1,26 @@
 User-agent: *
 Allow: /
+
+# AI assistants and their crawlers are welcome — company facts at /llms.txt
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://www.excelunit.com.hk/sitemap.xml
